@@ -80,7 +80,7 @@ class PluginEdgeware extends PolkawalletPlugin {
   final bool recoveryEnabled;
 
   @override
-  List<NetworkParams> get nodeList {
+  Future<List<NetworkParams>> get nodeList async {
     return _randomList(node_list_edgeware)
         .map((e) => NetworkParams.fromJson(e))
         .toList();
